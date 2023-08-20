@@ -6,7 +6,9 @@
      ansible.builtin.package:
         name: nginx
         state: present
+   - name: Starting Nginx 
      ansible.builtin.systemd:
       name: nginx
-      state: started
+      state: restarted
       enabled: yes
+      daemon_reload: yes
