@@ -1,0 +1,10 @@
+- name: Install package
+  host: all
+  become: yes
+  task:
+   - name: installing ngnix
+     ansible.buildin.package:
+        name: ngnix
+        state: present
+
+
