@@ -1,7 +1,7 @@
 - name: Install package
   hosts: all
   become: yes
-  task:
+  tasks:
    - name: installing ngnix
      ansible.buildin.package:
         name: ngnix
