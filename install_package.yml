@@ -1,5 +1,5 @@
 - name: Install package
-  host: all
+  hosts: all
   become: yes
   task:
    - name: installing ngnix
