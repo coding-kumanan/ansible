@@ -4,11 +4,11 @@
   tasks:
    - name: installing ngnix
      ansible.builtin.package:
-        name: nginx
-        state: present
+       name: nginx
+       state: present
    - name: Starting Nginx 
      ansible.builtin.systemd:
-      name: nginx
-      state: restarted
-      enabled: yes
-      daemon_reload: yes
+       name: nginx
+       state: restarted
+       enabled: yes
+       daemon_reload: yes
