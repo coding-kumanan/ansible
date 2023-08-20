@@ -4,3 +4,4 @@ courses: #key with lots of values is list
   - aws
   - devops
   - linux
+name
