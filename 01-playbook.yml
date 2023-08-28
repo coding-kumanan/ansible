@@ -1,0 +1,19 @@
+- name: play1
+  hosts: all
+  tasks:
+  - name: printing hai from task 1 and play 1
+    ansible.builtin.debug:
+    msg: hai printing from the task 1 and play 1
+
+  - name: printing hello from task 2 play 1
+    ansible.builtin.debug:
+    msg: hello from t2 p2
+
+- name: play 2
+  host: group2
+  tasks:
+    - name: printing good morning from the play 2 task 1
+      ansible.builtin.debug:
+      msg: good morning
+
+
