@@ -10,7 +10,7 @@
       msg: hello from t2 p2
 
 - name: play 2
-  host: group2
+  hosts: group2
   tasks:
    - name: printing good morning from the play 2 task 1
      ansible.builtin.debug:
