@@ -12,8 +12,8 @@
 - name: play 2
   host: group2
   tasks:
-    - name: printing good morning from the play 2 task 1
-      ansible.builtin.debug:
+   - name: printing good morning from the play 2 task 1
+     ansible.builtin.debug:
        msg: good morning
 
 
