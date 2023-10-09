@@ -6,6 +6,6 @@
      register: OUT #going to register the output of the shell commend       
 
    - name: printing the shell cmd output 
-     ansible.builtin.debug:
+     ansible.builtin.debug:   
       msg: The uptime of the hosts is {{OUT}}
      
