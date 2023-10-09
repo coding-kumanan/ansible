@@ -6,7 +6,7 @@
    - name: printing the default variable  
      ansible.builtin.debug:
        msg: The ansible server flavor is "{{ansible_distribution}}" 
-       
+
    - name: printing the ssh client by default variable
      ansible.builtin.debug:
-       msg: The ssh client is "{{SSH_CLIENT}}"" 
+       msg: The ssh client is "{{ansible_nodename}}"" 
