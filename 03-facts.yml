@@ -9,4 +9,4 @@
 
    - name: printing the ssh client by default variable
      ansible.builtin.debug:
-       msg: The ssh client is "{{ansible_nodename}}"" 
+       msg: The ssh client is "{{ansible_nodename}}" 
