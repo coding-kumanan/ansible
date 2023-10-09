@@ -8,8 +8,8 @@
       prompt: What is your username?
       private: True   #if it is flase the input will be visible 
 
-  vars_file:
-   - dev_vars.yml #from the yml file 
+  vars_files:
+   - dev.yml          #from the yml file 
 
   tasks:
    - name: printing the variable 
