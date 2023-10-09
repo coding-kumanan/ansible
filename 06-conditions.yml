@@ -8,4 +8,10 @@
      ansible.builtin.debug:
        msg: The action is true
      when: action
+
+  tasks: 
+   - name: printing the default variable is server is centos   
+     ansible.builtin.debug:
+       msg: The ansible server flavor is {{ansible_distribution}}
+     when: ansible_distribution==Centos
     
