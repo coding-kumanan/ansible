@@ -19,6 +19,7 @@
    - name: storing the uptime in a variable
      set_fact:
        macaddress: "{{ansible_default_ipv4.macaddress}}"
-   #- name: printing from setfacts variable 
+       
+   - name: printing from setfacts variable 
      ansible.builtin.debug:
        msg: mac address from setfacts {{macaddress}}
