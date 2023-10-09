@@ -5,8 +5,12 @@
   tasks: 
    - name: printing the default variable  
      ansible.builtin.debug:
-       msg: The ansible server flavor is "{{ansible_distribution}}" 
+       msg: The ansible server flavor is {{ansible_distribution}}
 
    - name: printing the ssh client by default variable
      ansible.builtin.debug:
-       msg: The ssh client is "{{ansible_nodename}}" 
+       msg: The dns name {{ansible_nodename}} 
+
+   - name: printing the mac address by default variable
+     ansible.builtin.debug:
+       msg: The mac address of the node is {{ansible_default_ipv4.macaddress}} 
