@@ -2,15 +2,21 @@
   hosts: all
   vars:
    action: true
+   var1: somevalue
 
   tasks:
-   - name: printing the variable 
+   - name: run this printing task if action is true
      ansible.builtin.debug:
        msg: The action is true
      when: action
-     
-   - name: printing the default variable is server is centos   
+
+   - name: run this printing task if ansible distribution is centos   
      ansible.builtin.debug:
        msg: The ansible server flavor is {{ansible_distribution}}
      when: ansible_distribution == "CentOS"
+
+   - name: run this printing task if var1 value is defined   
+     ansible.builtin.debug:
+       msg: The action is true {{var1}}
+     when: var1 is defined 
     
