@@ -18,5 +18,5 @@
    - name: run this printing task if var1 value is defined   
      ansible.builtin.debug:
        msg: The action is true {{var1}}
-     when: var1 is defined 
+     when: var1 is not defined 
     
