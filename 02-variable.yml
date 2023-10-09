@@ -11,4 +11,9 @@
      ansible.builtin.debug:
        msg: The local variable is {{URL}}
      vars: 
-      URL: local.play.google.com
+      URL: local.play.google.com    #local variable have higer periority than global in this task
+  
+   - name: Demo CLI variable
+     ansible.builtin.debug:
+      msg: The CLI variable is {{CLIURL}} #undeclared variable will give error. we can give value in the CLI and it have highest periority 
+
