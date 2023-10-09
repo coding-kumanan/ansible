@@ -2,4 +2,10 @@
   hosts: all
   tasks: 
    - name: running shell commend  
-     ansible.builtin.shell: uptime   # shell module to run shell commends uptime is a commend
+     ansible.builtin.shell: uptime   # shell module to run shell commends uptime is a commend, #it only execute the commend not gonna print. 
+     register: OUT #going to register the output of the shell commend       
+
+   - name: printing the shell cmd output 
+     ansible.builtin.debug:
+      msg: The uptime of the hosts is {{OUT}}
+     
