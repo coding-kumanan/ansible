@@ -16,10 +16,10 @@
      ansible.builtin.debug:
        msg: The mac address of the node is {{ansible_default_ipv4.macaddress}} 
 
-   - name: storing the uptime in a variable
+   - name: storing the macaddress in a variable using setfact module 
      set_fact:
        macaddress: "{{ansible_default_ipv4.macaddress}}"
-       
+
    - name: printing from setfacts variable 
      ansible.builtin.debug:
        msg: mac address from setfacts {{macaddress}}

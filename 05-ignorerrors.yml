@@ -1,0 +1,7 @@
+- name: Demor on Error handling 
+  hosts: all
+  tasks:
+   - name: check the java running or not 
+     ansible.builtin.shell: ps -ef | grep java | grep -v grep #check the java process is running or not?
+     register: OUT 
+     ignore_errors: True
