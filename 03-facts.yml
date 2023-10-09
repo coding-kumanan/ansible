@@ -2,7 +2,7 @@
 
 - name: Demo on facts
   hosts: all
-  gather_facts: false
+  #gather_facts: false flag to enable or disable gathering facts about hosts 
   tasks: 
    - name: printing the default variable  
      ansible.builtin.debug:

@@ -1,0 +1,5 @@
+- name: Demo on shell module 
+  hosts: all
+  tasks: 
+   - name: running shell commend  
+     ansible.builtin.shell: uptime   # shell module to run shell commends uptime is a commend
