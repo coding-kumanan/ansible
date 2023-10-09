@@ -2,6 +2,7 @@
 
 - name: Demo on facts
   hosts: all
+  gather_facts: false
   tasks: 
    - name: printing the default variable  
      ansible.builtin.debug:
