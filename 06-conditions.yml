@@ -6,6 +6,6 @@
   tasks:
    - name: printing the variable 
      ansible.builtin.debug:
-       msg: The url is {{url}}
+       msg: The action is true
      when: action
     
