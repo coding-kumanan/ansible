@@ -1,7 +1,7 @@
 - name: Demo on variable
   hosts: all
   vars:
-   action: flase 
+   action: false
 
   tasks:
    - name: printing the variable 
