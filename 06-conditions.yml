@@ -2,8 +2,9 @@
   hosts: all 
   vars:
     condition: true 
+    
   task: 
    - name: print the variable if the variable is true 
      ansible.builtin.debug 
-       msg: {{condition}}
-     when: condition == true 
+       msg: "{{condition}}"
+     when: condition
