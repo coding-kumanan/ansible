@@ -1,11 +1,11 @@
-- name: Demo on conditions 
-  hosts: all 
+- name: Demo on variable
+  hosts: all
   vars:
-    condition: true 
+   action: true 
 
-  tasks: 
+  tasks:
    - name: printing the variable 
      ansible.builtin.debug:
        msg: The url is {{url}}
-     when: condition 
+     when: action
     
