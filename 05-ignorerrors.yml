@@ -5,3 +5,7 @@
      ansible.builtin.shell: ps -ef | grep java | grep -v grep #check the java process is running or not?
      register: OUT 
      ignore_errors: True
+
+   - name: print
+     ansible.biltin.debug:
+       msg: "printing after ingore a error" 
