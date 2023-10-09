@@ -1,9 +1,14 @@
 - name: Demo on variable
   hosts: all
   vars:
-   url: play.google.com
+   url: play.google.com #global variable
   tasks:
    - name: printing the variable 
      ansible.builtin.debug:
        msg: The url is {{url}}
-       
+
+   - name: Demo local
+      ansible.builtin.debug:
+       msg: The local variable is {{URL}}
+     vars: 
+      URL: local.play.google.com
