@@ -3,8 +3,9 @@
   vars:
     condition: true 
 
-  task: 
-   - name: print the variable if the variable is true 
-     ansible.builtin.debug 
-       msg: condition statisfied
-     when: condition
+  tasks: 
+   - name: printing the variable 
+     ansible.builtin.debug:
+       msg: The url is {{url}}
+     when: condition 
+    
