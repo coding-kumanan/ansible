@@ -9,7 +9,7 @@
       private: True   #if it is flase the input will be visible 
 
   vars_files:
-   - dev.yml          #from the yml file 
+   - "{{ENV}}.yml"          #from the yml file 
 
   tasks:
    - name: printing the variable 
