@@ -10,7 +10,7 @@
 
   vars_files:
    - "{{ENV}}.yml"          #from the yml file 
-
+   
   tasks:
    - name: printing the variable 
      ansible.builtin.debug:

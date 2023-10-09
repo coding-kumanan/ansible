@@ -1,0 +1,9 @@
+#to print the facts gatherd by using default variables 
+
+- name: Demo on facts
+  hosts: all
+  tasks: 
+   - name: printing the default variable  
+     ansible.builtin.debug:
+       msg: The ansible version is "{{ansible_distribution}}" 
+       
