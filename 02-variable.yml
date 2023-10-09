@@ -2,10 +2,14 @@
   hosts: all
   vars:
    url: play.google.com #global variable
+ 
   vars_prompt:          #promt variable value will given in the CLI
     - name: username
       prompt: What is your username?
       private: True   #if it is flase the input will be visible 
+
+  vars_file:
+    - "{{ENV}}}_.yml" #from the yml file 
 
   tasks:
    - name: printing the variable 
@@ -25,3 +29,8 @@
    - name: Demo promt varibale
      ansible.builtin.debug:
       msg: The promt varibale is {{username}} 
+
+   - name: Printing from yml file
+     ansible.builtin.debug:
+      msg: The instance type is {{INS_TYPE}}
+
