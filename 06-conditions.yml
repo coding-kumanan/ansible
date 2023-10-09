@@ -1,13 +1,13 @@
 - name: Demo on variable
   hosts: all
   vars:
-   action: true
+   con: true
 
   tasks:
    - name: printing the variable 
      ansible.builtin.debug:
        msg: The action is true
-     when: action
+     when: con
 
   tasks: 
    - name: printing the default variable is server is centos   
