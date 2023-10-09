@@ -2,6 +2,11 @@
   hosts: all
   vars:
    url: play.google.com #global variable
+  vars_prompt:          #promt variable value will given in the CLI
+    - name: username
+      prompt: What is your username?
+      private: True   #if it is flase the input will be visible 
+
   tasks:
    - name: printing the variable 
      ansible.builtin.debug:
@@ -16,4 +21,7 @@
    - name: Demo CLI variable
      ansible.builtin.debug:
       msg: The CLI variable is {{CLIURL}} #undeclared variable will give error. we can give value in the CLI and it have highest periority 
-
+   
+   - name: Demo promt varibale
+     ansible.builtin.debug:
+      msg: The promt varibale is {{username}} 
