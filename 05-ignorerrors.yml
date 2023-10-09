@@ -6,6 +6,6 @@
      register: OUT 
      ignore_errors: True
 
-   - name: print
-     ansible.biltin.debug:
+   - name: print 
+     ansible.builtin.debug:
        msg: "printing after ingore a error" 
