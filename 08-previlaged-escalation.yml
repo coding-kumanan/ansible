@@ -1,0 +1,11 @@
+- name: Demo on previlaged escalation 
+  hosts: all
+  become: yes
+  tasks: 
+   - name: showing the user id 
+     ansible.builtin.shell: id    
+     register: OUT   
+
+   - name: printing user id
+     ansible.builtin.debug:   
+      msg: The uptime of the hosts is {{OUT.stdout}}
