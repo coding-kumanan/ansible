@@ -1,0 +1,14 @@
+- name: Demo on tags 
+  hosts: all
+  become: true
+  tasks:
+   - name: intall ngnix 
+     ansible.builtin.yum:
+       name: ngnix
+       state: present
+     tags: install
+   - name: start ngnix
+     ansible.builtin.service:
+       name: ngnix
+       state: started
+     tags: start  
