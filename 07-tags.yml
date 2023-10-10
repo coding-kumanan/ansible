@@ -2,13 +2,13 @@
   hosts: all
   become: true
   tasks:
-   - name: intall ngnix 
+   - name: intall nginx 
      ansible.builtin.yum:
-       name: ngnix
+       name: nginx
        state: present
      tags: install
-   - name: start ngnix
+   - name: start nginx
      ansible.builtin.service:
-       name: ngnix
+       name: nginx
        state: started
      tags: start  
