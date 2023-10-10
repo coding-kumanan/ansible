@@ -9,7 +9,7 @@
 
    - name: printing user id
      ansible.builtin.debug:   
-      msg: The uptime of the hosts is {{OUT.stdout}}
+      msg: the user id is {{OUT.stdout}}
 
    
 - name: running with out privilaged  
@@ -22,4 +22,4 @@
 
    - name: printing user id
      ansible.builtin.debug:   
-      msg: The uptime of the hosts is {{OUT.stdout}}
+      msg: The user id is {{OUT.stdout}}
