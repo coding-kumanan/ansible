@@ -4,8 +4,8 @@ hosts: all
 tasks:
 
   - name: Register loop output as a variable
-   ansible.builtin.shell: echo "{{ item }}"
+   ansible.builtin.debug:"{{item}}"
    loop:
      - "one"
      - "two"
-  register: echo
+  register: OUT
