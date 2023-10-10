@@ -12,3 +12,8 @@
        name: nginx
        state: started
      tags: start  
+   - name: stop nginx
+     ansible.builtin.service:
+       name: nginx
+       state: stopped
+     tags: stop  
