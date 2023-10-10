@@ -13,7 +13,7 @@
 
    
 - name: running with out privilaged  
-  host: all 
+  hosts: all 
   become: no
   tasks:
    - name: showing the user id 
