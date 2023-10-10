@@ -1,15 +1,21 @@
-- name: Demo on previlaged escalation 
+- name: Demo on previlaged escalation,running as sudo  
   hosts: all
+  become: yes
   tasks: 
    - name: showing the user id 
      ansible.builtin.shell: id    
      register: OUT 
-     become: yes  
+       
 
    - name: printing user id
      ansible.builtin.debug:   
       msg: The uptime of the hosts is {{OUT.stdout}}
 
+   
+- name: running with out privilaged  
+  host: all 
+  become: no
+  tasks:
    - name: showing the user id 
      ansible.builtin.shell: id    
      register: OUT   
