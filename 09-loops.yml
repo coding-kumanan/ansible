@@ -18,4 +18,4 @@
      register: echo
    - name: Register loop output as a variable
      ansible.builtin.debug:
-       msg: "{{echo}}"
+       msg: "{{echo.stdout_line}}"
