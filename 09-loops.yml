@@ -2,11 +2,10 @@
 hosts: all
 
 tasks:
-
-  - name: Register loop output as a variable
+ - name: Register loop output as a variable
    ansible.builtin.debug:
      msg: "{{item}}"
    loop:
      - "one"
      - "two"
-  register: OUT
+   register: OUT
