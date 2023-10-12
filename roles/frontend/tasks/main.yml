@@ -14,8 +14,20 @@
     path: /usr/share/nginx/html
     state: absent
 
-- name: Copying file 
+- name: Copying file frontend file
   ansible.builtin.copy: 
     src : /tmp/frontend-main/static/
     dest: /usr/share/nginx/html 
     remote_src: yes
+
+- name: Copying proxy file
+  ansible.builtin.copy: 
+    src : roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
+- name: demon reload
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    enabled: true
+    daemon_reload: true
