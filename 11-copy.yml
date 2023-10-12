@@ -4,6 +4,6 @@
 
   tasks:
     - name: Copying file 
-      ansibile.builtin.copy 
+      ansibile.builtin.copy: 
          src : systemd.services
          dest: /home/centos/systemd.services 
