@@ -1,0 +1,9 @@
+- name: demo on coping file 
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Copying file 
+      ansibile.builtin.copy 
+        src : systemd.services
+        dest: /home/centos/systemd.services 
