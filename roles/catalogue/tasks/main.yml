@@ -15,7 +15,7 @@
   ansible.builtin.file:
     path: /{{APPUSER}}/home/
     state: absent
-    ignore_errors: True  
+  ignore_errors: True  
 
 - name: Download and extract {{COMPONENT}} service  
   ansible.builtin.unarchive:
