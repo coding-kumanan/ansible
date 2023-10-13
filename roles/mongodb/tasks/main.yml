@@ -28,7 +28,7 @@
 
 - name: Injecting {{COMPONENT}} scema
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/{{item}.js}"
+    file: "/tmp/mongodb-main/{{item}}.js"
     idempotent: yes
     loop:
        - catalogue
