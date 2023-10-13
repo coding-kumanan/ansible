@@ -31,6 +31,10 @@
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
 
+- name: Generating Artifacts npm Install
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
+
 - name: set host name to {{COMPONENT}}-{{ENV}}
   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
 
