@@ -37,7 +37,7 @@
 
 - name: Copying {{COMPONENT}} systemd file  
   ansible.builtin.template: 
-    src : catalogue.service
+    src : systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
 
 - name: demon reload and starting the {{COMPONENT}}
