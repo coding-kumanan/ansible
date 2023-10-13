@@ -13,7 +13,7 @@
 
 - name: cleaning up {{APPUSER}} user home directory for {{COMPONENT}} service
   ansible.builtin.file:
-    path: /{{APPUSER}}/home/
+    path: /home/{{APPUSER}}
     state: absent
   ignore_errors: True  
 
@@ -26,14 +26,14 @@
 - name: Copying {{COMPONENT}} file and change permission 
   ansible.builtin.copy: 
     src : /tmp/catalogue-main
-    dest: /{{APPUSER}}/home/{{COMPONENT}} 
+    dest: /home/{{APPUSER}}/{{COMPONENT}} 
     remote_src: yes
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
 
 - name: Generating Artifacts npm Install
   community.general.npm:
-    path: /{{APPUSER}}/home/{{COMPONENT}}
+    path: /home/{{APPUSER}}/{{COMPONENT}}
 
 - name: set host name to {{COMPONENT}}-{{ENV}}
   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
