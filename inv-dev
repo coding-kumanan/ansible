@@ -2,3 +2,5 @@
 frontend-dev.roboshop.internal
 [mongodb]
 mongodb-dev.roboshop.internal
+[catalogue]
+mongodb-dev.roboshop.internal
