@@ -9,7 +9,7 @@
     name: redis-6.2.12
     state: present
 
-  - name: Enabling {{COMPONENT}} visibility 
+- name: Enabling {{COMPONENT}} visibility 
   ansible.builtin.replace:
     path: /etc/redis.conf
     regexp: '127.0.0.1'
