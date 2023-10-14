@@ -9,3 +9,18 @@
     name: redis-6.2.12
     state: present
 
+  - name: Enabling {{COMPONENT}} visibility 
+  ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: starting {{COMPONENT}} service
+  ansible.builtin.systemd:
+    name: redis
+    state: restarted
+    enabled: true
+    daemon_reload: true
+
+- name: set host name to {{COMPONENT}}-{{ENV}}
+  ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
