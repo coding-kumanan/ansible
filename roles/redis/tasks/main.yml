@@ -1,0 +1,11 @@
+#copying repo file 
+- name: Copying {{COMPONENT}} repo
+  ansible.builtin.copy: 
+    src : redis.repo
+    dest: /etc/yum.repos.d/redis.repo
+
+- name: intalling {{COMPONENT}}
+  ansible.builtin.package:
+    name: redis-6.2.11
+    state: present
+

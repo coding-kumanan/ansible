@@ -4,3 +4,5 @@ frontend-dev.roboshop.internal
 mongodb-dev.roboshop.internal
 [catalogue]
 catalogue-dev.roboshop.internal
+[redis]
+redis-dev.roboshop.internal
