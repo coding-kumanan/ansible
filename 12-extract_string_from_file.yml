@@ -1,15 +1,16 @@
 - name: play1
   hosts: all
+  become: yes
   tasks:
     - name: Fetches the log file from the remote node 
       ansible.builtin.slurp:
-        src: /var/log/mysqld.log
-        register: pwd_log
+         src: mysql.log
+         register: pwd_log
 
     - name: Extracting the root password
       ansible.builtin.set_fact:
-        DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join(' ') | split(' ') | last }}"
+         DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join(' ') | split(' ') | last }}"
 
     - name: printing extracted variable
       ansible.builtin.debug:
-        msg: "{{DEFAULT_PASSWORD}}"
+         msg: "{{DEFAULT_PASSWORD}}"
