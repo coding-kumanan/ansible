@@ -1,0 +1,4 @@
+- name: Creating {{APPUSER}} for {{COMPONENT}} service 
+  ansible.builtin.user:
+    name: "{{APPUSER}}"
+    comment: app user 
