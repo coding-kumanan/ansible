@@ -5,7 +5,7 @@
     - name: Fetches the log file from the remote node 
       ansible.builtin.slurp:
         src: /home/centos/ansible/mysql.log
-        register: pwd_log
+      register: pwd_log
 
     - name: Extracting the root password
       ansible.builtin.set_fact:
