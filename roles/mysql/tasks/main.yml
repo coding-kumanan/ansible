@@ -5,7 +5,10 @@
 
 - name: Installing {{COMPONENT}} service
   ansible.builtin.package: 
-    name : mysql-community-server
+    name : 
+       - mysql-community-server
+       - MySQL-python
+       - python3-PyMySQL
     state: present
 
 - name: Demon reload and starting the {{COMPONENT}}
@@ -15,5 +18,21 @@
     enabled: true
     daemon_reload: true
 
+# Block and rescue works together : If any of the task in the block fails, then RESCUE tasks will be executed.
+- name: Verifying the password
+  block:
+    - name: Fetch MySQL Verison
+      community.mysql.mysql_info:
+          login_user: root
+          login_password: RoboShop@1
+          filter: version
+  rescue:
+    - name: Fetches the log file from the remote node 
+      ansible.builtin.slurp:
+        src: /var/log/mysqld.log
+      register: pwd_log
+ - name: Extracting the root password
+      ansible.builtin.set_fact:
+          DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join(' ') | split(' ') | last }}"
 
 

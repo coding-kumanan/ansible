@@ -1,5 +1,5 @@
 - name: play1
-  hosts: mysql
+  hosts: all
   tasks:
     - name: Fetches the log file from the remote node 
       ansible.builtin.slurp:
