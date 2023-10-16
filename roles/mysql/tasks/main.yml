@@ -4,7 +4,7 @@
     dest: /etc/yum.repos.d/{{COMPONENT}}.repo
 
 - name: Installing {{COMPONENT}} service
-  ansible.builtin.packages: 
+  ansible.builtin.package: 
     name : mysql-community-server
     state: present
 
