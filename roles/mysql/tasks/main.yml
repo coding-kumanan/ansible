@@ -10,7 +10,7 @@
 
 - name: Demon reload and starting the {{COMPONENT}}
   ansible.builtin.systemd:
-    name: "{{COMPONENT}}"
+    name: mysqld
     state: restarted
     enabled: true
     daemon_reload: true
