@@ -1,0 +1,19 @@
+- name: Copying {{COMPONENT}} repo
+  ansible.builtin.copy: 
+    src : "{{COMPONENT}}.repo"
+    dest: /etc/yum.repos.d/{{COMPONENT}}.repo
+
+- name: Installing {{COMPONENT}} service
+  ansible.builtin.packages: 
+    name : mysql-community-server
+    state: present
+
+- name: Demon reload and starting the {{COMPONENT}}
+  ansible.builtin.systemd:
+    name: "{{COMPONENT}}"
+    state: restarted
+    enabled: true
+    daemon_reload: true
+
+
+
