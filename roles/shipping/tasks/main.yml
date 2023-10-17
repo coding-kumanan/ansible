@@ -6,9 +6,13 @@
 - name: creating {{APPUSER}} user and Download and extract {{COMPONENT}}
   ansible.builtin.include_role:
     name: common
-    tasks_from: 
-       - create_user
-       - download_and_extract
+    tasks_from: create_user
+
+- name: creating {{APPUSER}} user and Download and extract {{COMPONENT}}
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download_and_exctract
+
 
 - name: Generating Artifacts for {{COMPONENT}} service
   ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
