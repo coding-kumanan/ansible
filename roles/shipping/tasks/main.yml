@@ -1,6 +1,6 @@
 - name: Install Maven for {{COMPONENT}} service
   ansible.builtin.package:
-    name: install maven -y
+    name: maven
     state: present
 
 - name: creating {{APPUSER}} user and Download and extract {{COMPONENT}}
