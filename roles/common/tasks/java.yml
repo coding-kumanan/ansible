@@ -1,0 +1,14 @@
+- name: Install Maven for {{COMPONENT}} service
+  ansible.builtin.package:
+    name: maven
+    state: present
+
+- name: creating {{APPUSER}}
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create_user
+
+- name: Download and extract {{COMPONENT}}
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download_and_exctract
