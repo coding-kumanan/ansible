@@ -1,14 +1,15 @@
 pipeline {
     agent any
+    environment{
+        GLOBEL = "globel-env"   //pipeline variable:All the stages can acces this
     }
     stages{
-        stage('Performing a dry run') {  // This stage should only run when you raise a PULL Request.
-            steps {
-                sh '''
-                    env 
-                
-                '''
+        stage('stage 1'){
+            steps{
+                sh "env"
+                sh "echo stage 1 shell comment"
+                sh "echo globel env variable is ${GLOBEL}"
             }
         }
-    }
+   }
 }
