@@ -10,10 +10,12 @@ pipeline {
             steps{
                 sh "env"
                 sh "echo stage 1 main"
+            }
+        }
+        stage('running feature'){
         when{branch 'test'}
             steps{
-                sh 'running test'
-            }
+                sh "echo feature branch"
             }
         }
    }
