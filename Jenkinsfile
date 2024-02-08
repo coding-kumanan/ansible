@@ -17,7 +17,13 @@ pipeline {
             steps{
                 sh "echo feature branch"
             }
+        } 
+        stage('running agained pull req'){
+        when { branch pattern: "PR-.*", comparator: "REGEXP"}
+            steps{
+                sh "echo feature branch"
+            }
         }
-   }
+    }
 }
 //
