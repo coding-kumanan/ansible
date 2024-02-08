@@ -10,6 +10,10 @@ pipeline {
             steps{
                 sh "env"
                 sh "echo stage 1 main"
+        when{branch 'test'}
+            steps{
+                sh 'running test'
+            }
             }
         }
    }
