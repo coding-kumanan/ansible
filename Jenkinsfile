@@ -21,7 +21,7 @@ pipeline {
         stage('running agained pull req'){
         when { branch pattern: "PR-.*", comparator: "REGEXP"}
             steps{
-                sh "echo feature branch"
+                sh "echo feature 2 branch"
             }
         }
     }
