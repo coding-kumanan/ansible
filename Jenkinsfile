@@ -4,12 +4,14 @@ pipeline {
         GLOBEL = "globel-env"   //pipeline variable:All the stages can acces this
     }
     stages{
-        stage('stage 1'){
+    
+        stage('running main branch'){
+        when{branch 'main'}
             steps{
                 sh "env"
-                sh "echo stage 1 shell comment"
-                sh "echo globel env variable is ${GLOBEL}"
+                sh "echo stage 1 main"
             }
         }
    }
 }
+//
